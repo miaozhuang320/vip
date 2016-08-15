@@ -17,8 +17,21 @@ MoreTabView.prototype.load = function(){
 	var left =moreRight - $('.more-modal').innerWidth() + 'px'
 	$('.more-modal').show().css({
 		left:left
+	}).hover(function(){
+		$(this).show()
+	},function(){
+		$(this).hide()
 	})
 	
+	$('.more-modal li').hover(function(){
+		$(this).find('p').stop().animate({
+			top:'0'
+		},300)
+	},function(){
+		$(this).find('p').stop().animate({
+			top:'25%'
+		},300)
+	})
 }
 
 MoreTabView.prototype.unLoad = function(){
