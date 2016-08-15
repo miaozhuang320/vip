@@ -23,9 +23,15 @@ LocationTabView.prototype.load = function(index){
 	var top = locationDiv.getBoundingClientRect().bottom + 'px'
 	//console.log(left)
 	//创建locationTabView的界面
+	//监听窗口变化
+	//对象之间的引用是内存地址的引用,每一个对象都有一个内存地址,一个内存地址只能指向一个地址(门牌号),,对象之间的引用是互相影响的,,,而基本类型不影响.
+	
 	
 	if(this.$tab){
-		this.$tab.show()
+		this.$tab.show().css({
+			left:left,
+		    top:top
+		})
 		return
 	}
 	
@@ -35,8 +41,7 @@ LocationTabView.prototype.load = function(index){
 		border:'1px solid silver',
 		backgroundColor:'white',
 		position:'absolute',
-		left:left,
-		top:top
+		
 	}).appendTo($('body')).append($("<ul class='cityList'>").css({
 		listStyleType:'none',
 		//padding:0

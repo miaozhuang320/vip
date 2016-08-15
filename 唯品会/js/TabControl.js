@@ -13,6 +13,8 @@ var normalTextColor= '#666666';
 function TabControl(){
 	
 	this.locTabView = new LocationTabView()
+	
+	this.moreTabView = new MoreTabView()
 	this.control()
 }
 
@@ -21,6 +23,14 @@ TabControl.prototype.control = function(){
 	//监听定位的标签触发悬停事件
 	$('.header-location').hover(function(){
 		this.locTabView.load(0)
+	}.bind(this))
+	
+	$('.more-show').hover(
+		function(){
+			this.moreTabView.load()
+		}.bind(this),
+	function(){
+		this.moreTabView.unLoad()
 	}.bind(this))
 }
 

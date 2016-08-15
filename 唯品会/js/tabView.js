@@ -22,7 +22,12 @@ TabView.prototype.checkDatas = function(index){
 }
 
 
-
+MoreTabView.prototype.unLoad = function(){
+	
+	
+	
+	
+}
 
 
 
